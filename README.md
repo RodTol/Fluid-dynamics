@@ -4,3 +4,7 @@ Remember to load OpenFoam with:
 ```
 of21
 ```
+To enable opengl on MatLab look at this link:
+```
+https://it.mathworks.com/matlabcentral/answers/1468426-cannot-enable-hardware-opengl-r2021b-ubuntu-20-04
+```
