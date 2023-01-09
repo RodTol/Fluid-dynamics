@@ -46,7 +46,7 @@ runTimeModifiable true;
 
 functions
 {
-    probes_object
+    probes_object // funzione per fare i probes
     {
         type            probes;
         functionObjectLibs ("libsampling.so");

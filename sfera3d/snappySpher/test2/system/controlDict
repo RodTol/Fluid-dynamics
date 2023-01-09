@@ -1,0 +1,124 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.6                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+// Libreria per i modelli turbolenti personalizzati
+libs ("libmyIncompressibleLESModels.so");
+
+
+application     icoFoam;
+
+startFrom       latestTime;
+ 
+startTime       0;
+
+stopAt          endTime;
+
+endTime         1.0;
+
+deltaT          0.00001;
+
+writeControl    timeStep;
+
+writeInterval   100;
+
+purgeWrite      5;
+
+writeFormat     ascii;
+
+writePrecision  12;
+
+writeCompression compressed;
+
+timeFormat      general;
+
+timePrecision   12;
+
+runTimeModifiable yes;
+
+adjustTimeStep    no;
+
+maxCo             0.5;
+
+maxDeltaT         2.0e-3;
+
+functions
+{
+
+/*
+pressure1
+{
+    // Mandatory entries (unmodifiable)
+    type            pressure;
+    libs            (fieldFunctionObjects);
+
+    // Mandatory entries (runtime modifiable)
+    mode            totalCoeff;
+
+    // Optional entries (runtime modifiable)
+    p               p;
+    U               U;
+    rho             rhoInf;
+    rhoInf          1.0; // enabled if rho=rhoInf
+    pRef            0.0;
+    hydroStaticMode none;
+    g               (0 -9.81 0); // enabled if hydroStaticMode != none
+    hRef            0.0;         // enabled if hydroStaticMode != none
+    pInf            0.0;
+    UInf            (0.1 0 0);
+}
+*/
+
+forces1
+{
+    // Mandatory entries
+    type            forces;
+    libs            ("libforces.so");
+    patches         ("sphere");
+
+
+    // Optional entries
+
+    // Field names
+    p               p;
+    U               U;
+    rho         rhoInf;
+    rhoInf          1;
+
+    // Reference pressure [Pa]
+    pRef            0;
+
+    // Include porosity effects?
+    porosity        no;
+
+    // Store and write volume field representations of forces and moments
+    writeFields     no;
+
+    // Centre of rotation for moment calculations
+    CofR            (0 0 0);
+
+    // Spatial data binning
+    // - extents given by the bounds of the input geometry
+    binData
+    {
+        nBin        20;
+        direction   (1 0 0);
+        cumulative  yes;
+    }
+}
+
+}
+
+// ************************************************************************* //
