@@ -7,4 +7,6 @@ Con il simple grading decido i rapporti fra le dimensioni delle celle e posso cr
 Avendo solo una direzione di raffinamento, la divisione in 4 celle quadrate, mi permette di fare un raffinamento su tutta la parete, mentre con una cella sola avrei potuto farla solo su due lati.
 
 ## Reynolds alti
-Tempo 2s, con time step di 0.02s, stampato ogni 20 iterazioni. Viscosità 0.0001, velocità 1 m/s e dimensione 0.1 m
+Tempo 2s, con time step di 0.02s, stampato ogni 20 iterazioni. Viscosità 0.0001, velocità 1 m/s e dimensione 0.1 m.  
+  
+Per fare come Ghia and Ghia adesso facciamo L = 1 m, U = 0.1 m/s e nu = 0,001. Nota che per mettere le dimensioni giuste ho tolto la variabile scale = 0.1 dal BlockMeshDict
