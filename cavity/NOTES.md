@@ -10,3 +10,6 @@ Avendo solo una direzione di raffinamento, la divisione in 4 celle quadrate, mi 
 Tempo 2s, con time step di 0.02s, stampato ogni 20 iterazioni. Viscosità 0.0001, velocità 1 m/s e dimensione 0.1 m.  
   
 Per fare come Ghia and Ghia adesso facciamo L = 1 m, U = 0.1 m/s e nu = 0,001. Nota che per mettere le dimensioni giuste ho tolto la variabile scale = 0.1 dal BlockMeshDict
+
+## Osservazione
+Quando genero con BlockMesh, il risultato è salvato in constant/polyMesh
