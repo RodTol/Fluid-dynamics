@@ -13,3 +13,7 @@ Per fare come Ghia and Ghia adesso facciamo L = 1 m, U = 0.1 m/s e nu = 0,001. N
 
 ## Osservazione
 Quando genero con BlockMesh, il risultato è salvato in constant/polyMesh
+
+## Countour vorticity
+Per calcolare la vorticity e fare il countour fai: ComputeDerivates -> Calculator -> CellDataToPointData -> Countour. Ricordati di mettere il countoure in wirefreame e mettere parallel camera projection.  
+Per fare le label con i valori della vorticity, devi prima selezionare i punti con InteractiveSelectPointsOn e poi vai in Edit -> FindData e sistema le point Label.
