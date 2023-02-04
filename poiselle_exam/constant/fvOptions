@@ -17,7 +17,7 @@ FoamFile
 momentumSource
 {
 
-    type            meanVelocityForce;
+    type            meanVelocityForce; //Qua setto il gradiente di pressione costante
     selectionMode   all;
     fields          (U);
     Ubar            (1 0 0);
