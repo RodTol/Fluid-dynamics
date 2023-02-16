@@ -22,8 +22,8 @@ FoamFile
     {
         type            cyclic;
         inGroups        1(cyclic);
-        nFaces          80;
-        startFace       50800;
+        nFaces          100;
+        startFace       99400;
         matchTolerance  0.0001;
         transform       unknown;
         neighbourPatch  outlet;
@@ -32,8 +32,8 @@ FoamFile
     {
         type            cyclic;
         inGroups        1(cyclic);
-        nFaces          80;
-        startFace       50880;
+        nFaces          100;
+        startFace       99500;
         matchTolerance  0.0001;
         transform       unknown;
         neighbourPatch  inlet;
@@ -42,15 +42,15 @@ FoamFile
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          640;
-        startFace       50960;
+        nFaces          1000;
+        startFace       99600;
     }
     frontAndBack
     {
         type            empty;
         inGroups        1(empty);
-        nFaces          51200;
-        startFace       51600;
+        nFaces          100000;
+        startFace       100600;
     }
 )
 
